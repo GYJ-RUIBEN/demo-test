@@ -416,7 +416,7 @@ Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{ Comma
 | MCP 底座 5 包 discover + 真实调用 | ✅ 5/5 PASS | filesystem（list_directory）、sqlite（SELECT 1）、memory（写读删）、fetch（抓 example.com）、run-python（print(1+1)=2）全部重跑通过 |
 | 四层记忆映射 | ✅ | project_memory / topics / session_memory 均在位；user_profile 按需生成 |
 | 跨项目隔离 | ✅ | `memory/projects` 下 18 个项目目录，抽读互不相通 |
-| Git 扩展 | ✅ 内置可用 | 临时仓库 commit / 分支 / log 全通过；`server-git` MCP（PyPI）验证 PASS。**推送未测**（无远程仓库） |
+| Git 扩展 | ✅ 内置可用 | 临时仓库 commit / 分支 / log 通过；`server-git` MCP（PyPI）PASS；**推送已实测**（demo-test main，fast-forward） |
 | Docker 扩展可列容器 | ✅ | `docker ps` 正常返回；`docker mcp` v0.44.3 |
 | 团队共享记忆 Git 同步 | ✅ 已跑通 | `docs/AGENT_SHARED.md` + 清单已推送到 `demo-test` main（commit `11af9b2`，fast-forward） |
 | 密钥明文零写入 | ✅ | 记忆目录正则扫描（sk-/api_key/password/secret/ghp_/AKIA）**零命中** |
