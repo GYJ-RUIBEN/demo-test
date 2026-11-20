@@ -407,7 +407,7 @@ Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{ Comma
 | 共享记忆文件 | ✅ 已创建 | `docs/AGENT_SHARED.md`（含使用规则、团队共识、环境事实、分工表四段结构） |
 | 代码协同 | ✅ 已有 | 9 实例 = 9 workspace + 同一 GitHub 仓库，走分支 + PR（沿用《GitHub 竞赛团队协作使用手册》） |
 | 任务协同 | ✅ 已有 | GitHub Issues / 项目看板 |
-| Git 同步验证 | ⚠ 未做 | 当前 workspace 不是 git 仓库（`git rev-parse` 报 not a repository），共享文件尚未提交；需在团队仓库里提交后才有同步效果 |
+| Git 同步验证 | ✅ 已跑通 | 已推送到 `git@github.com:GYJ-RUIBEN/demo-test.git` 的 main 分支（commit `11af9b2`，fast-forward 推送，无强制操作）；team mate `git pull` 即同步 |
 
 ## Phase 5 验收结果（2026-11-20，全部重跑实测）
 
@@ -418,7 +418,7 @@ Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{ Comma
 | 跨项目隔离 | ✅ | `memory/projects` 下 18 个项目目录，抽读互不相通 |
 | Git 扩展 | ✅ 内置可用 | 临时仓库 commit / 分支 / log 全通过；`server-git` MCP（PyPI）验证 PASS。**推送未测**（无远程仓库） |
 | Docker 扩展可列容器 | ✅ | `docker ps` 正常返回；`docker mcp` v0.44.3 |
-| 团队共享记忆 Git 同步 | ❌ 未跑通 | `docs/AGENT_SHARED.md` 已创建，但当前 workspace 非 git 仓库，无法提交 → 需放入团队仓库后再验证 |
+| 团队共享记忆 Git 同步 | ✅ 已跑通 | `docs/AGENT_SHARED.md` + 清单已推送到 `demo-test` main（commit `11af9b2`，fast-forward） |
 | 密钥明文零写入 | ✅ | 记忆目录正则扫描（sk-/api_key/password/secret/ghp_/AKIA）**零命中** |
 
 ### 验收中新发现并已修复的问题
